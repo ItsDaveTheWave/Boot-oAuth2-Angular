@@ -7,8 +7,8 @@ import { AppComponent } from './app.component';
 //external
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ToastrModule } from 'ngx-toastr';
-import { CarListComponent } from './car/car-list/car-list.component';
-import { CarDetailComponent } from './car/car-detail/car-detail.component';
+import { CarListComponent } from './components/car-list/car-list.component';
+import { CarDetailComponent } from './components/car-detail/car-detail.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +19,7 @@ import { CarDetailComponent } from './car/car-detail/car-detail.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    BrowserAnimationsModule,
+    BrowserAnimationsModule, // required animations module
     ToastrModule.forRoot()
   ],
   providers: [],
