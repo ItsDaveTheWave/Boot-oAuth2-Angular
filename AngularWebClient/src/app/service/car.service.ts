@@ -20,7 +20,15 @@ export class CarService {
     return this.httpClient.get<Car>(this.url + id);
   }
 
-  public save(car: Car): Observable<any> {
-    return this.httpClient.post<any>(this.url, car);
+  public create(car: Car): Observable<Car> {
+    return this.httpClient.post<Car>(this.url, car);
+  }
+
+  public edit(id: number, car: Car): Observable<Car> {
+    return this.httpClient.put<Car>(this.url + id, car);
+  }
+
+  public delete(id: number): Observable<void> {
+    return this.httpClient.delete<void>(this.url + id);
   }
 }
