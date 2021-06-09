@@ -9,9 +9,11 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -44,5 +46,23 @@ public class CarController {
 	@PostMapping
 	public ResponseEntity<Car> create(@RequestBody @Valid Car car) {
 		return new ResponseEntity<Car>(carRepo.save(car), HttpStatus.CREATED);
+	}
+	
+	@PutMapping
+	public ResponseEntity<Car> update(@RequestBody @Valid Car car) {
+		if(car.getId() == null) return new ResponseEntity<Car>(HttpStatus.NOT_FOUND);
+		Optional<Car> optCar = carRepo.findById(car.getId());
+		if(optCar.isPresent()) return new ResponseEntity<Car>(carRepo.save(car), HttpStatus.OK);
+		else return new ResponseEntity<Car>(HttpStatus.NOT_FOUND);
+	}
+	
+	@DeleteMapping("/{id}")
+	public ResponseEntity<Void> delete(@PathVariable Long id) {
+		Optional<Car> optCar = carRepo.findById(id);
+		if(optCar.isPresent()) {
+			carRepo.deleteById(id);
+			return new ResponseEntity<Void>(HttpStatus.NO_CONTENT);
+		}
+		else return new ResponseEntity<Void>(HttpStatus.NOT_FOUND);
 	}
 }
