@@ -13,6 +13,7 @@ import { FormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ToastrModule } from 'ngx-toastr';
 import { CarCreateComponent } from './components/car-create/car-create.component';
+import { CarEditComponent } from './components/car-edit/car-edit.component';
 
 
 @NgModule({
@@ -20,7 +21,8 @@ import { CarCreateComponent } from './components/car-create/car-create.component
     AppComponent,
     CarListComponent,
     CarDetailComponent,
-    CarCreateComponent
+    CarCreateComponent,
+    CarEditComponent
   ],
   imports: [
     BrowserModule,
