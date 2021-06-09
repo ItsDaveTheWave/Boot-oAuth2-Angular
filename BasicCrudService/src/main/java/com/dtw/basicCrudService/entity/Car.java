@@ -5,6 +5,8 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Positive;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -21,9 +23,13 @@ public class Car {
 	@Column(nullable = false, insertable = false, updatable = false)
 	private Long id;
 	@Column
+	@NotNull
 	private String brand;
 	@Column
+	@NotNull
 	private String model;
 	@Column
+	@NotNull
+	@Positive
 	private Integer price;
 }
