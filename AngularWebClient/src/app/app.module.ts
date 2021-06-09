@@ -12,13 +12,15 @@ import { FormsModule } from '@angular/forms';
 //external
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ToastrModule } from 'ngx-toastr';
+import { CarCreateComponent } from './components/car-create/car-create.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     CarListComponent,
-    CarDetailComponent
+    CarDetailComponent,
+    CarCreateComponent
   ],
   imports: [
     BrowserModule,
