@@ -17,8 +17,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.dtw.basicCrudService.entity.Car;
-import com.dtw.basicCrudService.errorHandling.EntityNotFoundException;
 import com.dtw.basicCrudService.service.CarService;
+import com.dtw.errorHandler.EntityNotFoundException;
 
 @RestController
 @RequestMapping("car")

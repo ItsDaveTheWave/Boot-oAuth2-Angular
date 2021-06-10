@@ -1,4 +1,4 @@
-package com.dtw.basicCrudService.errorHandling;
+package com.dtw.errorHandler;
 
 import java.time.LocalDateTime;
 import java.util.ArrayList;

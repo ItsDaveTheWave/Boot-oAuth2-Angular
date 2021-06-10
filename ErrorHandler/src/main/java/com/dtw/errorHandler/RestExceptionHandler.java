@@ -1,4 +1,4 @@
-package com.dtw.basicCrudService.errorHandling;
+package com.dtw.errorHandler;
 
 import javax.validation.ConstraintViolation;
 import javax.validation.ConstraintViolationException;

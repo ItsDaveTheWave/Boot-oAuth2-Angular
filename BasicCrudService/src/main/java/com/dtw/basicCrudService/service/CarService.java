@@ -6,8 +6,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.dtw.basicCrudService.entity.Car;
-import com.dtw.basicCrudService.errorHandling.EntityNotFoundException;
 import com.dtw.basicCrudService.repo.CarRepo;
+import com.dtw.errorHandler.EntityNotFoundException;
 
 @Service
 public class CarService {
